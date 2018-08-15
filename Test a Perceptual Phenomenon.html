@@ -11838,6 +11838,9 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 <ul>
 <li>We have a dependent variable that is measured. <code>time</code></li>
 <li>We also have one categorical variable that has only two related groups.</li>
+<li>We dont have population parameter.</li>
+<li>Our sample size less than 30.</li>
+<li>We are assuming distributions are nearly normal.</li>
 </ul>
 <p>So I will use <em>Dependent T-Test</em>.</p>
 
@@ -11855,7 +11858,7 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11879,7 +11882,7 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -11945,7 +11948,7 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
@@ -11961,7 +11964,7 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -11978,7 +11981,7 @@ $$ H_1: μ_{i} ≠ μ_{c} $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -12024,7 +12027,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of the time of Congruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Congruent</span><span class="o">.</span><span class="n">mean</span><span class="p">())))</span>
@@ -12055,7 +12058,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean of the time of Incongruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Incongruent</span><span class="o">.</span><span class="n">mean</span><span class="p">())))</span>
@@ -12095,7 +12098,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median of the time of Congruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Congruent</span><span class="o">.</span><span class="n">median</span><span class="p">())))</span>
@@ -12126,7 +12129,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median of the time of Incongruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Incongruent</span><span class="o">.</span><span class="n">median</span><span class="p">())))</span>
@@ -12166,7 +12169,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Std of the time of Congruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Congruent</span><span class="o">.</span><span class="n">std</span><span class="p">())))</span>
@@ -12197,7 +12200,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Std of the time of Incongruent : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Incongruent</span><span class="o">.</span><span class="n">std</span><span class="p">())))</span>
@@ -12237,7 +12240,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">])</span>
@@ -12250,7 +12253,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -12265,7 +12268,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_df</span>
@@ -12281,7 +12284,7 @@ memory usage: 464.0 bytes
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -12353,7 +12356,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">107</span><span class="p">)</span>
@@ -12372,13 +12375,13 @@ memory usage: 464.0 bytes
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[76]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a1f1a8160&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a243715c0&gt;</pre>
 </div>
 
 </div>
@@ -12413,7 +12416,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span><span class="s2">&quot;Graph of Congruent and Incongruent Datasets&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -12469,7 +12472,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -12504,13 +12507,13 @@ df = 23
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#for two tailed test</span>
 <span class="n">t_critical</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">degrees_of_freedom</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-critical from t-table : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">critical_value</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-critical from t-table : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t_critical</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -12527,7 +12530,7 @@ df = 23
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>t-critical from t-table : -1.71387152775
+<pre>t-critical from t-table : -2.06865761042
 </pre>
 </div>
 </div>
@@ -12538,7 +12541,7 @@ df = 23
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Congruent</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Incongruent</span><span class="p">)</span>
@@ -12574,7 +12577,7 @@ p_value: 4.10300058571e-08
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>8.0207 &gt; 1.7139</p>
+<blockquote><p>8.0207 &gt; 2.069</p>
 </blockquote>
 <p><code>t-statistic</code> is greater than <code>t-critical</code>. So we can reject the null hypothesis.</p>
 <p>Which is matches with my expectations and my results. After taking the online test, we can see that the second condition took longer to complete.</p>
@@ -12618,7 +12621,7 @@ p_value: 4.10300058571e-08
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
@@ -12635,7 +12638,7 @@ p_value: 4.10300058571e-08
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
